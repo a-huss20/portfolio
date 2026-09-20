@@ -28,7 +28,7 @@ export default function App() {
   return (
     // reducedMotion="user" turns off movement for visitors who ask their OS for less motion.
     <MotionConfig reducedMotion="user">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <ScrollToTop />
         <Navbar />
         <AnimatedRoutes />
