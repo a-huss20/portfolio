@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Design tokens. Change these to re-theme the whole site. */
+@theme {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  /* Palette: Night Bordeaux #3E000C, Strawberry Red #FB4B4E, Pastel Petal #FFCBDD,
+     Dark Amaranth #7C0B2B, Brick Ember #D10000 */
+  --color-ink: #3e000c;          /* page background (Night Bordeaux) */
+  --color-surface: #540417;      /* cards and chips: Night Bordeaux lifted toward Amaranth */
+  --color-line: #7c0b2b;         /* borders (Dark Amaranth) */
+  --color-fog: #cf98a9;          /* muted text: Pastel Petal softened */
+  --color-accent: #fb4b4e;       /* main accent (Strawberry Red) */
+  --color-accent-soft: #ffcbdd;  /* highlights and light text (Pastel Petal) */
+  --color-glow: #d10000;         /* background glow (Brick Ember) */
+  --color-ground: #1c0409;       /* landing-page hills and the section under them (darkest Bordeaux) */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* keeps anchors clear of the sticky navbar */
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
